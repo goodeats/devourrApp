@@ -9,6 +9,12 @@ body {
   padding: 0;
 }
 
+div.login.ng-scope {
+  display: inline-block;
+  padding: 10px;
+  background-color: #444;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,

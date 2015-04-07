@@ -9,8 +9,7 @@ angular.module('DevourrApp').factory('AuthFactory', ['$http', '$window', 'Server
   };
 
   var signup = function(credentials){
-    debugger
-    return $http.post(ServerUrl + '/login', credentials).success(function(response){
+    return $http.post(ServerUrl + '/users', credentials).success(function(response){
       _storeSession(response);
     });
   };

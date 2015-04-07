@@ -12,6 +12,7 @@ angular.module('DevourrApp').config(['$routeProvider', function($routeProvider){
     .when('/login',{
       templateUrl: 'views/login.html'
     })
+
     // .when('/posts',{
     //   templateUrl: 'views/posts.html',
     //   controller: 'PostsController',

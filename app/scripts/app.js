@@ -21,12 +21,10 @@ angular
     'MainController',
     'MainDirective'
   ]).run(function($rootScope, $http, $window, $location, AuthFactory){
-    // debugger
   if(AuthFactory.isAuthenticated()){
-    var data = JSON.parse($window.localStorage.getItem('devourr-user'));
-    $http.defaults.headers.common.Authorization = 'Token token=' + data.token;
+    var data = JSON.parse($window.localStorage.getItem('ga-user'));
+    $http.defaults.headers.common.Authorization = 'Token token=' + data.user.token;
   } else {
-    // debugger
     $location.path('/login');
   }
 

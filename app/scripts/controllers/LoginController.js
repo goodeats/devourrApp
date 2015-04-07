@@ -8,7 +8,7 @@ function loginController(AuthFactory, $location){
 
   vm.login = function(credentials){
     // debugger
-    AuthFactory.login({user: credentials}).then(function(response){
+    AuthFactory.login(credentials).then(function(response){
       console.log('login should redirect to home');
       vm.credentials = {};
       $location.path('/');

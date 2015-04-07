@@ -20,9 +20,9 @@ angular
     'ngTouch',
     'MainController',
     'MainDirective'
-  ]).run(function($rootScope, $http, $window, $location, AuthFactory){
+  ]).run(function($rootScope, $http, $window, $location, AuthFactory, PostsFactory){
   if(AuthFactory.isAuthenticated()){
-    var data = JSON.parse($window.localStorage.getItem('ga-user'));
+    var data = JSON.parse($window.localStorage.getItem('devourr-user'));
     $http.defaults.headers.common.Authorization = 'Token token=' + data.user.token;
   } else {
     $location.path('/login');
@@ -33,7 +33,7 @@ angular
       // debugger
       $location.path('/login');
     } else {
-      console.log('no posts here yet'); // PostsFactory.getPosts(); // in run function
+      PostsFactory.getPosts();
     }
   });
 });

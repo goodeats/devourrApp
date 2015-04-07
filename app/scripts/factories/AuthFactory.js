@@ -21,7 +21,7 @@ angular.module('DevourrApp').factory('AuthFactory', ['$http', '$window', 'Server
   };
 
   var isAuthenticated = function(){
-    var data = JSON.parse($window.localStorage.getItem('devourr-user'));
+    var data = JSON.parse(window.localStorage.getItem('devourr-user'));
     if(data) return !!data.token; // !! is a boolean that returns true if data exists
     return false;
   };

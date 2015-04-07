@@ -21,33 +21,21 @@ angular
     'MainController',
     'MainDirective'
   ]).run(function($rootScope, $http, $window, $location, AuthFactory){
+    // debugger
   if(AuthFactory.isAuthenticated()){
     var data = JSON.parse($window.localStorage.getItem('devourr-user'));
     $http.defaults.headers.common.Authorization = 'Token token=' + data.token;
   } else {
+    // debugger
     $location.path('/login');
   }
 
   $rootScope.$on('$routeChangeStart', function(event, next){
     if(!AuthFactory.isAuthenticated()){
+      // debugger
       $location.path('/login');
     } else {
       console.log('no posts here yet'); // PostsFactory.getPosts(); // in run function
     }
   });
 });
-
-  // .config(function ($routeProvider) {
-  //   $routeProvider
-  //     .when('/', {
-  //       templateUrl: 'views/main.html',
-  //       controller: 'MainCtrl'
-  //     })
-  //     .when('/about', {
-  //       templateUrl: 'views/about.html',
-  //       controller: 'AboutCtrl'
-  //     })
-  //     .otherwise({
-  //       redirectTo: '/'
-  //     });
-  // });

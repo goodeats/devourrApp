@@ -5,9 +5,7 @@ loginController.$inject = ['AuthFactory', '$location'];
 
 function loginController(AuthFactory, $location){
   var vm = this;
-
   vm.login = function(credentials){
-    // debugger
     AuthFactory.login(credentials).then(function(response){
       console.log('welcome back!');
       vm.credentials = {};

@@ -7,6 +7,7 @@ function signupController(AuthFactory, $location){
   var vm = this;
 
   vm.signup = function(credentials){
+    console.log('found the SIGN UP button');
     AuthFactory.signup({ user: credentials }).then(function(response){
       vm.credentials = {};
       $location.path('/');

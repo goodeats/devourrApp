@@ -5,9 +5,10 @@ angular.module('DevourrApp').factory('UsersFactory', ['$http', '$window', 'Serve
   var user = {};
 
   var isCurrentUser = function(){
-    var data = JSON.parse(window.localStorage.getItem('devourr-user'));
-    if(data) return !!data.user.token; // !! is a boolean that returns true if data exists
-    return false;
+    return true;
+    // var data = JSON.parse(window.localStorage.getItem('devourr-user'));
+    // if(data) return !!data.user.token; // !! is a boolean that returns true if data exists
+    // return false;
   };
 
   var getUsers = function(){
@@ -41,11 +42,23 @@ angular.module('DevourrApp').factory('UsersFactory', ['$http', '$window', 'Serve
     });
   };
 
-  var edituser = function(userId, credentials){
+  var edituser = function(credentials, userId){
+    var data = JSON.parse($window.localStorage.getItem('devourr-user'));
+    var config = {
+      headers: {
+        'AUTHORIZATION': 'Token token=' + data.user.token
+      }
+    };
+
     console.log(credentials);
+    debugger
     return $http.patch(ServerUrl + '/users/' + userId, credentials).success(function(response){
-      console.log(response);
       console.log('sucessful user edit!');
+      debugger
+      console.log(response);
+    }).error(function(data, status, headers, config){
+      debugger
+      console.log('You did not update the profile: ', data, status, headers, config);
     });
   };
 

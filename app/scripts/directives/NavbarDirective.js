@@ -1,5 +1,5 @@
 'use strict';
-angular.module('MainDirective').directive('gaNavbar', [function(){
+angular.module('MainDirective').directive('devourrNavbar', [function(){
   return {
     restrict: 'E',
     templateUrl: 'views/navbar.html',

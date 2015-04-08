@@ -12,5 +12,15 @@ function usersController(UsersFactory, $routeParams, $window, $http, ServerUrl){
 
   vm.user = UsersFactory.user;
 
+  vm.edituser = function(credentials){
+    // debugger
+    UsersFactory.edituser(credentials, $routeParams.userId).then(function(response){
+      console.log('user edit form!');
+      console.log(response);
+      vm.credentials = {};
+      // $location.path('/');
+    });
+  };
+
 }
 

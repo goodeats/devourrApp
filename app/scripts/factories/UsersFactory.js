@@ -41,12 +41,21 @@ angular.module('DevourrApp').factory('UsersFactory', ['$http', '$window', 'Serve
     });
   };
 
+  var edituser = function(userId, credentials){
+    console.log(credentials);
+    return $http.patch(ServerUrl + '/users/' + userId, credentials).success(function(response){
+      console.log(response);
+      console.log('sucessful user edit!');
+    });
+  };
+
   return {
     users: users,
     user: user,
     isCurrentUser: isCurrentUser,
     getUsers: getUsers,
-    getUserProfile: getUserProfile
+    getUserProfile: getUserProfile,
+    edituser: edituser
   };
 
 }]);

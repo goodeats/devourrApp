@@ -1,4 +1,5 @@
 <section>
+  <button type="text">Edit Profile</button>
   <h1>this is the single user view!!!</h1>
   <article class='allUsers'>
     <h3>hi {{usersController.user.name}}</h3>
@@ -6,8 +7,13 @@
     <p>bio: {{usersController.user.bio}}</p>
     <p>location: {{usersController.user.location}}</p>
     <p><a ng-href='{{usersController.user.website}}' target='_blank'>{{usersController.user.website}}</a></p>
-    <p><img src='{{usersController.user.avatar}}' /></p>
+    <p><img src='{{usersController.user.avatar}}'></p>
+    <h5>Posts:</h5>
+    <ul>
+      <li ng-repeat='user in usersController.user.posts'>{{user.title}}</li>
+    </ul>
   </article>
   <p>yoo</p>
+  <edituser-form></edituser-form>
 </section>
 

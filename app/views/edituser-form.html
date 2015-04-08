@@ -1,0 +1,51 @@
+<form class="login-form" name-"edituserForm" ng-submit="usersController.edituser(usersController.credentials)" novalidate>
+
+  <div class="form-group">
+    <input id="name" type="text" name="name" ng-model="usersController.credentials.name" required>
+    <label id="name-label" for="name">Name</label>
+  </div>
+
+  <div class="form-group">
+    <input id="username" type="text" name="username" ng-model="usersController.credentials.username" required>
+    <label id="username-label" for="username">Username</label>
+  </div>
+
+  <div class="form-group">
+    <input id="email" type="text" name="email" ng-model="usersController.credentials.email" required>
+    <label id="email-label" for="email">Email</label>
+  </div>
+
+  <div class="form-group">
+    <input id="bio" type="textarea" name="bio" ng-model="usersController.credentials.bio" required>
+    <label id="bio-label" for="bio">Bio</label>
+  </div>
+
+  <div class="form-group">
+    <input id="avatar" type="textarea" name="avatar" ng-model="usersController.credentials.avatar" required>
+    <label id="avatar-label" for="avatar">Avatar</label>
+  </div>
+
+  <div class="form-group">
+    <input id="website" type="textarea" name="website" ng-model="usersController.credentials.website" required>
+    <label id="website-label" for="website">Website</label>
+  </div>
+
+  <div class="form-group">
+    <input id="location" type="textarea" name="location" ng-model="usersController.credentials.location" required>
+    <label id="location-label" for="location">Location</label>
+  </div>
+
+  <div class="form-group">
+    <select id="privacy" name="privacy" ng-model="usersController.credentials.privacy" required>
+      <option selected value='0'>Global</option>
+      <option value='1'>Just Followers</option>
+      <option value='2'>Personal</option>
+    </select>
+    <label id="privacy-label" for="privacy">Privacy</label>
+  </div>
+
+  <div class="form-group">
+    <input type="submit" class="button-submit" ng-disabled="edituserForm.$invalid" value="Edit">
+  </div>
+
+</form>

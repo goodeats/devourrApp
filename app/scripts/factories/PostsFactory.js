@@ -12,8 +12,8 @@ angular.module('DevourrApp').factory('PostsFactory', ['$http', '$window', 'Serve
     };
 
     return $http.get(ServerUrl + '/posts', config).success(function(response){
-      debugger
       angular.copy(response.posts, posts);
+      // debugger
     }).error(function(data, status, headers, config){
       console.log('You\'re doing it wrong: ', data, status, headers, config);
     });

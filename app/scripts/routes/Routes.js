@@ -1,4 +1,5 @@
 'use strict';
+
 angular.module('DevourrApp').config(['$routeProvider', function($routeProvider){
   $routeProvider
     .when('/', {
@@ -17,6 +18,21 @@ angular.module('DevourrApp').config(['$routeProvider', function($routeProvider){
       controller: 'PostsController',
       controllerAs: 'postsController'
     })
+    .when('/users',{
+      templateUrl: 'views/users.html',
+      controller: 'UsersController',
+      controllerAs: 'usersController'
+    })
+    .when('/users/:userId',{
+      templateUrl: 'views/user.html',
+      controller: 'UsersController',
+      controllerAs: 'usersController'
+    })
+    // .when('/profile',{
+    //   templateUrl: 'views/users.html',
+    //   controller: 'UsersController',
+    //   controllerAs: 'usersController'
+    // })
     .otherwise({
       redirectTo: '/'
     });

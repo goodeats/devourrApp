@@ -1,7 +1,19 @@
 <section>
   <header><h1>All of the posts</h1></header>
-  <article ng-repeat='post in postsController.posts'>
+  <article ng-repeat='post in postsController.posts' class='userPosts'>
     <h3>{{post.title}}</h3>
-    <p>{{post.body}}</p>
+
+    <p>Made by - <a ng-href='http://localhost:9000/#/users/{{post.user_id}}'>@{{post.user.username}}</a></p>
+
+    <p>{{post.description}}</p>
+    <p><img src='{{post.picture}}' /></p>
+    <div class="postStats">
+      <li>Likes: {{post.likes}}</li>
+      <li>Reheats: {{post.reheats}}</li>
+      <li>Mades: {{post.mades}}</li>
+      <li>Stashes: {{post.stashes}}</li>
+    </div>
+    <h5>Comments:</h5>
+    <p>{{post.comments[0].body}}</p>
   </article>
 </section>

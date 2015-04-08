@@ -9,6 +9,7 @@ angular.module('MainDirective').directive('gaNavbar', [function(){
     scope: {},
     link: function($scope, element, attrs){
       //manipulate the dom here
+      // console.log($scope, element, attrs);
     }
   };
 }]);

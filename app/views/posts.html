@@ -7,7 +7,7 @@
     <p>Made by - <a ng-href='http://localhost:9000/#/users/{{post.user_id}}'>@{{post.user.username}}</a></p>
 
     <p>{{post.description}}</p>
-    <p><img src='{{post.picture}}' /></p>
+    <p><a ng-href='http://localhost:9000/#/posts/{{post.id}}'><img src='{{post.picture}}'></a></p>
     <div class="postStats">
       <li>Likes: {{post.likes}}</li>
       <li>Reheats: {{post.reheats}}</li>

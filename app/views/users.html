@@ -7,7 +7,7 @@
     <p>bio: {{user.bio}}</p>
     <p>location: {{user.location}}</p>
     <p><a ng-href='{{user.website}}' target='_blank'>{{user.website}}</a></p>
-    <p><img src='{{user.avatar}}'></p>
+    <p><a ng-href='http://localhost:9000/#/users/{{user.id}}'><img src='{{user.avatar}}'></a></p>
     <div class='postStats'>
       <p>Likes: {{post.likes}}</p>
       <p>Reheats: {{post.reheats}}</p>

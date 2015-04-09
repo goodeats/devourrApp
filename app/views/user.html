@@ -10,7 +10,7 @@
     <p><img src='{{usersController.user.avatar}}'></p>
     <h5>Posts:</h5>
     <ul>
-      <li ng-repeat='user in usersController.user.posts'>{{user.title}}</li>
+      <li ng-repeat='user in usersController.user.posts'><a ng-href='http://localhost:9000/#/posts/{{user.id}}'>{{user.title}}</a></li>
     </ul>
   </article>
   <p>yoo</p>

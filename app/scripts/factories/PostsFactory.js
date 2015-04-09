@@ -27,7 +27,7 @@ angular.module('DevourrApp').factory('PostsFactory', ['$http', '$window', 'Serve
         'AUTHORIZATION': 'Token token=' + data.user.token
       }
     };
-    debugger
+
     return $http.get(ServerUrl + '/posts/' + postId, config).success(function(response){
       angular.copy(response.post, post);
       console.log(response.post, 'factory got this');

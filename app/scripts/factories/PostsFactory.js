@@ -37,11 +37,29 @@ angular.module('DevourrApp').factory('PostsFactory', ['$http', '$window', 'Serve
     });
   };
 
+  var newPost = function(credentials){
+    var data = JSON.parse($window.localStorage.getItem('devourr-user'));
+    var config = {
+      headers: {
+        'AUTHORIZATION': 'Token token=' + data.user.token
+      }
+    };
+    credentials.post['user_id'] = data.user.id;
+    return $http.post(ServerUrl + '/posts', credentials).success(function(response){
+      posts.push({post: response});
+      console.log(response, 'factory got this');
+    }).error(function(data, status, headers, config){
+      console.log('You did not create a POST: ', data, status, headers, config);
+      // debugger
+    });
+  };
+
   return {
     posts: posts,
     post: post,
     getPosts: getPosts,
-    getPost: getPost
+    getPost: getPost,
+    newPost: newPost
   };
 
 }]);

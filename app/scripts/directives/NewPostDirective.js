@@ -1,5 +1,5 @@
 'use strict';
-angular.module('MainDirective').directive('newPostForm', [function(){
+angular.module('MainDirective').directive('newpostForm', [function(){
   return {
     restrict: 'E',
     templateUrl: 'views/newpost-form.html',

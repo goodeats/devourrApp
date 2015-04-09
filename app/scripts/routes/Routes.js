@@ -33,7 +33,7 @@ angular.module('DevourrApp').config(['$routeProvider', function($routeProvider){
       controller: 'UsersController',
       controllerAs: 'usersController'
     })
-    // .when('/profile',{
+    // .when('/profile',{ ///////do this!
     //   templateUrl: 'views/users.html',
     //   controller: 'UsersController',
     //   controllerAs: 'usersController'

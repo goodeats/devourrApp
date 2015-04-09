@@ -2,7 +2,7 @@
   <ul>
     <li><a href='#/'>Hume</a></li>
     <li><a href='#/about'>About</a></li>
-    <li ng-if='navbarController.isCurrentUser()'><a ng-href='#/users/{{user.id}}'>Profile</a></li>
+    <li ng-if='navbarController.isLoggedIn()'><a ng-href='#/users/{{navbarController.isCurrentuser}}' ng-model="navbarController.isCurrentUser">Profile</a></li>
     <li ng-if='!navbarController.isLoggedIn()'><a ng-href='#/login'>Login/Sign up</a></li>
     <li ng-if='navbarController.isLoggedIn()'><a href='javascript:void(0)' ng-click='navbarController.logout()'>Logout</a></li>
     <li ng-if='navbarController.isLoggedIn()'><a href='javascript:void(0)'>Some other text if authenticated</a></li>

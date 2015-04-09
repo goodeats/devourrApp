@@ -1,5 +1,4 @@
-<h1>new form bitches!</h1>
-<form class="newpost-form" name-"newPostForm" ng-controller="PostsController as postsController" ng-submit="postsController.newPost(postsController.credentials)" novalidate>
+<form class="newpost-form" name-"newpostForm" ng-controller="PostsController as postsController" ng-submit="postsController.newPost(postsController.credentials)" novalidate>
 
   <div class="form-group">
     <input id="title" type="text" name="title" ng-model="postsController.credentials.title" ng-init="postsController.credentials.title='{{postsController.post.title}}'" required>

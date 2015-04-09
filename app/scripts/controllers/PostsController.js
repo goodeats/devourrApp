@@ -10,14 +10,13 @@ function postsController(PostsFactory, $routeParams, $location, $window, $http, 
   vm.post = PostsFactory.post;
 
   vm.newPost = function(credentials){
-    // debugger
+    credentials = {post: credentials};
     console.log(credentials);
-    // UsersFactory.edituser(credentials, $routeParams.userId).then(function(response){
-    //   console.log('user edit form!');
-    //   // debugger
-    //   console.log(response);
-    //   vm.credentials = {};
-    //   // $location.path('/');
-    // });
+    PostsFactory.newPost(credentials).then(function(response){
+      console.log('created new post!');
+      console.log(response);
+      vm.credentials = {};
+      location.reload();
+    });
   };
 }

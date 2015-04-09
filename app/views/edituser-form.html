@@ -1,7 +1,7 @@
 <form class="edituser-form" name-"edituserForm" ng-controller="UsersController as usersController" ng-submit="usersController.edituser(usersController.credentials)" novalidate>
 
   <div class="form-group">
-    <input id="name" type="text" name="name" ng-model="usersController.credentials.name" ng-init="usersController.credentials.name='{{usersController.user.name}}'" required>
+    <input id="name" type="text" name="name" ng-model="usersController.credentials.name" value="{{usersController.user.name}}" required>
     <label id="name-label" for="name">Name</label>
   </div>
 

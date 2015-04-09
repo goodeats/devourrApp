@@ -18,6 +18,11 @@ angular.module('DevourrApp').config(['$routeProvider', function($routeProvider){
       controller: 'PostsController',
       controllerAs: 'postsController'
     })
+    .when('/posts/:postId',{
+      templateUrl: 'views/post.html',
+      controller: 'PostsController',
+      controllerAs: 'postsController'
+    })
     .when('/users',{
       templateUrl: 'views/users.html',
       controller: 'UsersController',

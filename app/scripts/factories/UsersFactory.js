@@ -51,13 +51,10 @@ angular.module('DevourrApp').factory('UsersFactory', ['$http', '$window', 'Serve
     };
 
     console.log(credentials);
-    debugger
     return $http.patch(ServerUrl + '/users/' + userId, credentials).success(function(response){
       console.log('sucessful user edit!');
-      debugger
       console.log(response);
     }).error(function(data, status, headers, config){
-      debugger
       console.log('You did not update the profile: ', data, status, headers, config);
     });
   };

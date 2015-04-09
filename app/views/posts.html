@@ -1,7 +1,8 @@
 <section>
   <header><h1>All of the posts</h1></header>
+  <newpost-form></newpost-form>
   <article ng-repeat='post in postsController.posts' class='userPosts'>
-    <h3>{{post.title}}</h3>
+    <h3><a ng-href='http://localhost:9000/#/posts/{{post.id}}'>{{post.title}}</a></h3>
 
     <p>Made by - <a ng-href='http://localhost:9000/#/users/{{post.user_id}}'>@{{post.user.username}}</a></p>
 

@@ -1,7 +1,8 @@
 'use strict';
-angular.module('DevourrApp').factory('PostsFactory', ['$http', '$window', 'ServerUrl', function($http, $window, ServerUrl){
+angular.module('DevourrApp').factory('PostsFactory', ['$http', '$window', 'ServerUrl', '$routeParams', function($http, $window, ServerUrl, $routeParams){
 
   var posts = [];
+  var post = {};
 
   var getPosts = function(){
     var data = JSON.parse($window.localStorage.getItem('devourr-user'));
@@ -19,9 +20,28 @@ angular.module('DevourrApp').factory('PostsFactory', ['$http', '$window', 'Serve
     });
   };
 
+  var getPost = function(postId){
+    var data = JSON.parse($window.localStorage.getItem('devourr-user'));
+    var config = {
+      headers: {
+        'AUTHORIZATION': 'Token token=' + data.user.token
+      }
+    };
+    debugger
+    return $http.get(ServerUrl + '/posts/' + postId, config).success(function(response){
+      angular.copy(response.post, post);
+      console.log(response.post, 'factory got this');
+    }).error(function(data, status, headers, config){
+      console.log('You did not find the POST: ', data, status, headers, config);
+      // debugger
+    });
+  };
+
   return {
     posts: posts,
-    getPosts: getPosts
+    post: post,
+    getPosts: getPosts,
+    getPost: getPost
   };
 
 }]);

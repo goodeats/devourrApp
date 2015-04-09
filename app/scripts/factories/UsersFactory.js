@@ -18,7 +18,6 @@ angular.module('DevourrApp').factory('UsersFactory', ['$http', '$window', 'Serve
         'AUTHORIZATION': 'Token token=' + data.user.token
       }
     };
-
     return $http.get(ServerUrl + '/users', config).success(function(response){
       angular.copy(response.users, users);
     }).error(function(data, status, headers, config){
@@ -33,7 +32,6 @@ angular.module('DevourrApp').factory('UsersFactory', ['$http', '$window', 'Serve
         'AUTHORIZATION': 'Token token=' + data.user.token
       }
     };
-
     return $http.get(ServerUrl + '/users/' + userId, config).success(function(response){
       angular.copy(response.user, user);
       console.log(response.user, 'factory got this');

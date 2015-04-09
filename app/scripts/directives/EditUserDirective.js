@@ -4,7 +4,7 @@ angular.module('MainDirective').directive('edituserForm', [function(){
     restrict: 'E',
     templateUrl: 'views/edituser-form.html',
     controller: 'UsersController',
-    controllerAs: 'UsersController',
+    controllerAs: 'usersController',
     bindToController: true,
     scope: {
       credentials: '='

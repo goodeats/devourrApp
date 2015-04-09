@@ -1,6 +1,6 @@
 'use strict';
-angular.module('DevourrApp').factory('PostsFactory', ['$http', '$window', 'ServerUrl', '$routeParams', function($http, $window, ServerUrl, $routeParams){
-
+angular.module('DevourrApp').factory('PostsFactory', ['$http', '$window', 'ServerUrl', function($http, $window, ServerUrl){
+//, '$routeParams'
   var posts = [];
   var post = {};
 
@@ -50,7 +50,23 @@ angular.module('DevourrApp').factory('PostsFactory', ['$http', '$window', 'Serve
       console.log(response, 'factory got this');
     }).error(function(data, status, headers, config){
       console.log('You did not create a POST: ', data, status, headers, config);
-      // debugger
+    });
+  };
+
+  var editPost = function(credentials, postId){
+    var data = JSON.parse($window.localStorage.getItem('devourr-user'));
+    var config = {
+      headers: {
+        'AUTHORIZATION': 'Token token=' + data.user.token
+      }
+    };
+
+    console.log(credentials);
+    return $http.patch(ServerUrl + '/posts/' + postId, credentials).success(function(response){
+      console.log('sucessful post edit!');
+      console.log(response);
+    }).error(function(data, status, headers, config){
+      console.log('You did not update the post: ', data, status, headers, config);
     });
   };
 
@@ -59,7 +75,8 @@ angular.module('DevourrApp').factory('PostsFactory', ['$http', '$window', 'Serve
     post: post,
     getPosts: getPosts,
     getPost: getPost,
-    newPost: newPost
+    newPost: newPost,
+    editPost: editPost
   };
 
 }]);

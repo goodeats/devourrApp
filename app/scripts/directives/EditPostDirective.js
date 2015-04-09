@@ -1,8 +1,8 @@
 'use strict';
-angular.module('MainDirective').directive('newpostForm', [function(){
+angular.module('MainDirective').directive('editpostForm', [function(){
   return {
     restrict: 'E',
-    templateUrl: 'views/newpost-form.html',
+    templateUrl: 'views/editpost-form.html',
     controller: 'PostsController',
     controllerAs: 'postsController',
     bindToController: true,

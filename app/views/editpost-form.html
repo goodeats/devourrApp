@@ -1,0 +1,27 @@
+<form class="editpost-form" name-"editpostForm" ng-controller="PostsController as postsController" ng-submit="postsController.editPost(postsController.credentials)" novalidate>
+
+  <div class="form-group">
+    <input id="title" type="text" name="title" ng-model="postsController.credentials.title" ng-init="postsController.credentials.title='{{postsController.post.title}}'" required>
+    <label id="title-label" for="title">Title</label>
+  </div>
+
+  <div class="form-group">
+    <input id="description" type="textarea" name="description" ng-model="postsController.credentials.description" placeholder="edit post mrwawr" required>
+    <label id="description-label" for="description">Description</label>
+  </div>
+
+  <div class="form-group">
+    <input id="picture" type="text" name="picture" ng-model="postsController.credentials.picture" value="wat" required>
+    <label id="picture-label" for="picture">Picture</label>
+  </div>
+
+  <div class="form-group">
+    <input id="location" type="textarea" name="location" ng-model="postsController.credentials.location" placeholder="{{postsController.post.location}}" required>
+    <label id="location-label" for="location">Location</label>
+  </div>
+
+  <div class="form-group">
+    <input type="submit" class="button-submit" ng-disabled="newPostForm.$invalid" value="Edit Post">
+  </div>
+
+</form>

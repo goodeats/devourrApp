@@ -33,10 +33,7 @@ angular
       $location.path('/login');
     } else {
       PostsFactory.getPosts();
-      PostsFactory.getPost();
-      PostsFactory.newPost();
       UsersFactory.getUsers();
-      UsersFactory.getUserProfile();
     }
   });
 });

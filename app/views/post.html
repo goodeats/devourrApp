@@ -1,5 +1,6 @@
 <section>
   <button type="text" ng-model='postsController.canEdit' ng-click="postsController.toggleCanEdit()">Edit Post</button>
+  <editpost-form></editpost-form>
   <header><h1>Just this post</h1></header>
   <article class='userPosts'>
     <h3>{{postsController.post.title}}</h3>

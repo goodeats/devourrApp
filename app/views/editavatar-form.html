@@ -1,0 +1,12 @@
+<form class="editavatar-form" name-"editavatarForm" ng-controller="AmazonController as amazonController" ng-submit="amazonController.editavatar(amazonController.credentials)" novalidate>
+
+  <div class="form-group">
+    <input id="avatar" type="text" name="avatar" ng-model="amazonController.credentials.avatar" placeholder="image path goes here" required>
+    <label id="title-label" for="title">Upload Image Here</label>
+  </div>
+
+  <div class="form-group">
+    <input type="submit" class="button-submit" ng-disabled="editavatarForm.$invalid" value="upload avatar">
+  </div>
+
+</form>

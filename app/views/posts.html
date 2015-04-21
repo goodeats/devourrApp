@@ -1,6 +1,7 @@
 <section>
+  <button type="text" ng-model='postsController.canEdit' ng-click="postsController.toggleCanEdit()">New Post</button>
+  <newpost-form ng-show='postsController.canEdit'></newpost-form>
   <header><h1>All of the posts</h1></header>
-  <newpost-form></newpost-form>
   <article ng-repeat='post in postsController.posts' class='userPosts'>
     <h3><a ng-href='http://localhost:9000/#/posts/{{post.id}}'>{{post.title}}</a></h3>
 

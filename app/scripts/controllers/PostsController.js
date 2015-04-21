@@ -6,6 +6,11 @@ postsController.$inject = ['PostsFactory', '$routeParams'];
 function postsController(PostsFactory, $routeParams){
   var vm = this;
 
+  vm.canEdit = false;
+  vm.toggleCanEdit = function() {
+    vm.canEdit = vm.canEdit === false ? true: false;
+  };
+
   vm.posts = PostsFactory.posts;
 
   if ($routeParams.postId) {

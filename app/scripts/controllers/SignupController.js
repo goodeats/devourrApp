@@ -10,7 +10,7 @@ function signupController(AuthFactory, $location){
     console.log('found the SIGN UP button');
     AuthFactory.signup({ user: credentials }).then(function(response){
       vm.credentials = {};
-      $location.path('/');
+      $location.path('/posts');
     });
   };
 }

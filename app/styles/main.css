@@ -1,9 +1,45 @@
+h1 {
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+span {
+  font-weight: bold;
+  color: #c17932;
+}
+
+.form-group {
+  padding: 10px;
+  background-color: #888;
+  width: 140px
+}
+
 .navbar {
   background-color: #c17932;
-  ul {
-    display: inline;
-    list-style: none;
-  }
+  margin: 0;
+  width: 100%;
+}
+
+.navheaders {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.navListItem {
+  display: inline;
+}
+
+.navlinks {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px 0 10px;
+}
+
+.navlinks:hover {
+  background-color: #608058;
+  padding: 5px;
+  color: #fff;
+  font-weight: bold;
 }
 
 img {
@@ -35,7 +71,7 @@ img {
 
 body {
   padding: 0;
-  background-color: #7AC132;
+  background-color: #608058;
 }
 
 div.login.ng-scope {

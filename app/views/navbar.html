@@ -1,12 +1,11 @@
 <nav class='navbar'>
-  <ul>
-    <li><a href='#/'>Hume</a></li>
-    <li><a href='#/about'>About</a></li>
-    <li ng-if='navbarController.isLoggedIn()'><a ng-href='#/users/{{navbarController.isCurrentuser}}' ng-model="navbarController.isCurrentUser">Profile</a></li>
-    <li ng-if='!navbarController.isLoggedIn()'><a ng-href='#/login'>Login/Sign up</a></li>
-    <li ng-if='navbarController.isLoggedIn()'><a href='javascript:void(0)' ng-click='navbarController.logout()'>Logout</a></li>
-    <li ng-if='navbarController.isLoggedIn()'><a href='javascript:void(0)'>Some other text if authenticated</a></li>
-    <li ng-if='navbarController.isLoggedIn()'><a ng-href='#/posts'>Posts</a></li>
-    <li ng-if='navbarController.isLoggedIn()'><a ng-href='#/users'>Users</a></li>
+  <ul class='navheaders' ng-controller="NavbarController as navbar">
+    <li class='navListItem' ng-if='navbar.isLoggedIn()'><a class='navlinks' ng-href='#/posts'>Posts</a></li>
+    <li class='navListItem' ng-if='navbar.isLoggedIn()'><a class='navlinks' ng-href='#/users'>Friends</a></li>
+    <li style='display:none' class='navListItem' ><a class='navlinks' href='#/'>Home</a></li>
+    <li class='navListItem' ><a class='navlinks' href='#/about'>About</a></li>
+    <li class='navListItem' ng-if='navbar.isLoggedIn()'><a class='navlinks' ng-href='#/users/{{navbar.user}}'>Profile</a></li>
+    <li class='navListItem' ng-if='!navbar.isLoggedIn()'><a class='navlinks' ng-href='#/login'>Login/Sign up</a></li>
+    <li class='navListItem' ng-if='navbar.isLoggedIn()'><a class='navlinks' href='javascript:void(0)' ng-click='navbar.logout()'>Logout</a></li>
   </ul>
 </nav>

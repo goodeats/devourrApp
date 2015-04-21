@@ -1,8 +1,8 @@
 <section>
   <button type="text" ng-model='usersController.canEdit' ng-click="usersController.toggleCanEdit()">Edit Profile</button>
-  <editavatar-form></editavatar-form>
-
-  <h1>this is the single user view!!!</h1>
+  <editavatar-form style='display:none'></editavatar-form>
+  <edituser-form ng-show='usersController.canEdit' ></edituser-form>
+  <h1>User Profile</h1>
   <article class='allUsers'>
     <h3>hi {{usersController.user.name}}</h3>
     <p>@{{usersController.user.username}}</p>
@@ -15,7 +15,5 @@
       <li ng-repeat='user in usersController.user.posts'><a ng-href='http://localhost:9000/#/posts/{{user.id}}'>{{user.title}}</a></li>
     </ul>
   </article>
-  <p>yoo</p>
-  <edituser-form ng-show='usersController.canEdit' ></edituser-form>
 </section>
 

@@ -1,7 +1,7 @@
 <section>
   <button type="text" ng-model='postsController.canEdit' ng-click="postsController.toggleCanEdit()">Edit Post</button>
-  <editpost-form></editpost-form>
-  <header><h1>Just this post</h1></header>
+  <editpost-form ng-show='postsController.canEdit'></editpost-form>
+  <h1>User Post</h1>
   <article class='userPosts'>
     <h3>{{postsController.post.title}}</h3>
     <p>Made by - <a ng-href='http://localhost:9000/#/users/{{postsController.post.user_id}}'>@{{postsController.post.user.username}}</a></p>

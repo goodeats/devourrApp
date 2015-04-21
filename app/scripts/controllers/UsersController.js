@@ -14,6 +14,13 @@ function usersController(UsersFactory, $routeParams, $location, $window, $http, 
     vm.user = UsersFactory.user;
   }
 
+  vm.profile = function(){
+
+      console.log('welcome back!');
+      vm.credentials = {};
+      $location.path('/posts');
+  };
+
   vm.canEdit = false;
   vm.toggleCanEdit = function() {
     vm.canEdit = vm.canEdit === false ? true: false;

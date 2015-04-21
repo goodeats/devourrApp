@@ -1,22 +1,16 @@
 'use strict';
 angular.module('MainController').controller('NavbarController', navbarController);
 
-navbarController.$inject = ['AuthFactory', 'UsersFactory', '$location', '$window'];
+navbarController.$inject = ['AuthFactory', '$location', '$window'];
 
-function navbarController(AuthFactory, UsersFactory, $location, $window){
-  var vm = this;
+function navbarController(AuthFactory, $location, $window){
+  var vm = this, data = JSON.parse($window.localStorage.getItem('devourr-user'));
 
   vm.isLoggedIn = function(){
     return AuthFactory.isAuthenticated();
   };
 
-  vm.isCurrentUser = function(){
-    return 1;
-    // return UsersFactory.isCurrentUser().then(function(){
-    //   var data = JSON.parse($window.localStorage.getItem('devourr-user'));
-    //   return data.id;
-    // });
-  };
+  vm.user = data.user.id;
 
   vm.logout = function(){
     AuthFactory.logout().then(function(){

@@ -9,7 +9,7 @@ function loginController(AuthFactory, $location){
     AuthFactory.login(credentials).then(function(response){
       console.log('welcome back!');
       vm.credentials = {};
-      $location.path('/');
+      $location.path('/posts');
     });
   };
 }

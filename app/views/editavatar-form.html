@@ -1,7 +1,7 @@
-<form style='display:none' class="editavatar-form" name-"editavatarForm" ng-controller="AmazonController as amazonController" ng-submit="amazonController.editavatar(amazonController.credentials)" novalidate>
+<form style='display:none' class="editavatar-form" name-"editavatarForm" ng-controller="UsersController as usersController" ng-submit="usersController.editavatar(usersController.credentials)" novalidate>
 
   <div class="form-group">
-    <input id="avatar" type="text" name="avatar" ng-model="amazonController.credentials.avatar" placeholder="image path goes here" required>
+    <input id="avatar" type="text" name="avatar" ng-model="usersController.credentials.avatar" placeholder="image path goes here" required>
     <label id="title-label" for="title">Upload Image Here</label>
   </div>
 

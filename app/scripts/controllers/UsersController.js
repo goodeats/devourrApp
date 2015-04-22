@@ -29,11 +29,12 @@ function usersController(UsersFactory, $routeParams, $location, $window, $http, 
   vm.edituser = function(credentials){
     console.log(credentials);
     credentials = {user: credentials};
+    debugger
     UsersFactory.edituser(credentials, $routeParams.userId).then(function(response){
       console.log('user edit form!');
       console.log(response);
       vm.credentials = {};
-      location.reload();
+      // location.reload();
     });
   };
 

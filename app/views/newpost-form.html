@@ -1,22 +1,22 @@
 <form class="newpost-form" name-"newpostForm" ng-controller="PostsController as postsController" ng-submit="postsController.newPost(postsController.credentials)" novalidate>
 
   <div class="form-group">
-    <input id="title" type="text" name="title" ng-model="postsController.credentials.title" ng-init="postsController.credentials.title='{{postsController.post.title}}'" required>
+    <input id="title" type="text" name="title" ng-model="postsController.credentials.title" required>
     <label id="title-label" for="title">Title</label>
   </div>
 
   <div class="form-group">
-    <input id="description" type="textarea" name="description" ng-model="postsController.credentials.description" placeholder="{{postsController.post.description}}" required>
+    <input id="description" type="text" name="description" ng-model="postsController.credentials.description" required>
     <label id="description-label" for="description">Description</label>
   </div>
 
   <div class="form-group">
-    <input id="picture" type="text" name="picture" ng-model="postsController.credentials.picture" value="wat" required>
+    <input id="picture" angular-file-select="" type="text" name="picture" ng-model="postsController.credentials.picture" required>
     <label id="picture-label" for="picture">Picture</label>
   </div>
 
   <div class="form-group">
-    <input id="location" type="textarea" name="location" ng-model="postsController.credentials.location" placeholder="{{postsController.post.location}}" required>
+    <input id="location" type="textarea" name="location" ng-model="postsController.credentials.location" required>
     <label id="location-label" for="location">Location</label>
   </div>
 

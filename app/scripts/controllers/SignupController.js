@@ -1,7 +1,4 @@
 'use strict';
-angular.module('MainController').controller('SignupController', signupController);
-
-signupController.$inject = ['AuthFactory', '$location'];
 
 function signupController(AuthFactory, $location){
   var vm = this;
@@ -14,3 +11,7 @@ function signupController(AuthFactory, $location){
     });
   };
 }
+
+angular.module('MainController').controller('SignupController', signupController);
+
+signupController.$inject = ['AuthFactory', '$location'];

@@ -1,10 +1,11 @@
 'use strict';
 angular.module('MainController').controller('PostsController', postsController);
 
-postsController.$inject = ['PostsFactory', '$routeParams'];
+postsController.$inject = ['PostsFactory', '$routeParams', '$scope'];
 
-function postsController(PostsFactory, $routeParams){
+function postsController(PostsFactory, $routeParams, $scope){
   var vm = this;
+
 
   vm.canEdit = false;
   vm.toggleCanEdit = function() {
@@ -18,10 +19,14 @@ function postsController(PostsFactory, $routeParams){
     vm.post = PostsFactory.post;
   }
 
+  $scope.uploadFile = function(){
+    console.log("did a file upload?");
+  };
 
   vm.newPost = function(credentials){
     credentials = {post: credentials};
     console.log(credentials);
+    debugger
     PostsFactory.newPost(credentials).then(function(response){
       console.log('created new post!');
       console.log(response);

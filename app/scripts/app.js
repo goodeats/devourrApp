@@ -18,6 +18,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    // 'angularFileUpload',
     'MainController',
     'MainDirective'
   ]).run(function($rootScope, $http, $window, $location, AuthFactory, PostsFactory, UsersFactory){

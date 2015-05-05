@@ -8,8 +8,8 @@ function fileController($scope, AWS){
 
   $scope.creds = {
     bucket: 'devourr',
-    access_key: 'AKIAIVXAXTQ7D65UIFFQ',
-    secret_key: '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'
+    access_key: '',
+    secret_key: ''
   };
 
   $scope.upload = function() {

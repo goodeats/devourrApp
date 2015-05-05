@@ -16,6 +16,8 @@ I chose to build this project with Angular.js to expand my coding abilities and 
 ** Adding what I feel would be a killer feature of having a "made" or "inspired" social feature where users can indicate that they made or were inspired by a post and can link directly to it
 * Search feature by hashtags
 
+http://www.cheynewallace.com/uploading-to-s3-with-angularjs/
+
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.11.1.
 
